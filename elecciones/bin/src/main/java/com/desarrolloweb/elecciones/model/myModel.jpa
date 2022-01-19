@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity-mappings ptype="MONOLITH" ppkg="com.desarrolloweb.elecciones" epkg="entities" v="5.4.3" rws="_16376804453682" Pws="_16376804453682" cws="_16376804453682" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_16376804453671" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <entity compositePrimaryKeyClass="VotantePK" abs="false" class="Votante" v="true" jbn="false" xre="false" m="false" rootElement="_16376804453671" id="_16376806113863">
+        <ath>LenovoPC</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="nombre" id="_163768068757612">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="apellido" id="_163768069252313">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="edad" id="_163769544212330">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="cedula" id="_16376806115414">
+                <xwm/>
+                <xm/>
+                <generated-value/>
+            </id>
+        </attributes>
+        <nq e="false" name="Votante.findAll">
+            <query>Select e from Votante e</query>
+        </nq>
+        <nq e="false" name="Votante.findByNombre">
+            <query>Select v from Votante v where v.nombre=:nombre</query>
+        </nq>
+        <nq e="false" name="Votante.findByApellido">
+            <query>Select v from Votante v where v.apellido=:apellido</query>
+        </nq>
+        <nq e="false" name="Votante.findByEdad">
+            <query>Select a from Votante a where a.edad=:edad</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="Mesa_votacionPK" abs="false" class="Mesa_votacion" v="true" jbn="false" xre="false" m="false" rootElement="_16376804453671" id="_16376806145546">
+        <ath>LenovoPC</ath>
+        <attributes>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_16376806113863" v="true" xvt="" name="votantes" id="_163770302824432">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_16376806145567">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="AUTO"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Mesa_votacion.findAll">
+            <query>Select e from Mesa_votacion e</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="Local_votacionPK" abs="false" class="Local_votacion" v="true" jbn="false" xre="false" m="false" rootElement="_16376804453671" id="_16376806227139">
+        <ath>LenovoPC</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="nombre" id="_163768095633114">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="ubicacion" id="_163769540776029">
+                <xwm/>
+                <xm/>
+            </basic>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_16376806145546" v="true" xvt="" name="mesa_votacions" id="_163768131148022">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_163768062271710">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="AUTO"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Local_votacion.findAll">
+            <query>Select e from Local_votacion e</query>
+        </nq>
+        <nq e="false" name="Local_votacion.findByNombre">
+            <query>Select l from Local_votacion l where l.nombre=:nombre</query>
+        </nq>
+        <nq e="false" name="Local_votacion.findByUbicacion">
+            <query>Select l from Local_votacion l where l.ubicacion=:ubicacion</query>
+        </nq>
+    </entity>
+    <c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Map</ct>
+        <ct>java.util.Collection</ct>
+        <cit>java.util.ArrayList</cit>
+        <cit>java.util.LinkedList</cit>
+        <cit>java.util.HashSet</cit>
+        <cit>java.util.TreeSet</cit>
+        <cit>java.util.HashMap</cit>
+    </c>
+    <wsl>
+        <ws n="Main" id="_16376804453682">
+            <i ref="_16376806145546" x="275" y="99"/>
+            <i ref="_16376806113863" x="37" y="99"/>
+            <i ref="_16376806227139" x="518" y="99"/>
+        </ws>
+    </wsl>
+</entity-mappings>
